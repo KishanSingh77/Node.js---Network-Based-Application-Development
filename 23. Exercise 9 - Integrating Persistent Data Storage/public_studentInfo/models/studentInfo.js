@@ -2,8 +2,8 @@ var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
 var studentInfoSchema = new Schema({
-  firstName: { String, required: true },
-  lastName: { String, required: true },
+  firstName: { type: String, required: true },
+  lastName: { type: String, required: true },
   degree: String,
   program: String
 });

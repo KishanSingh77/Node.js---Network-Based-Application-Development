@@ -9,20 +9,22 @@
       <th>Degree</th>
       <th>Program</th>
     </tr>
-    <tr>
-      <td>
-        <%= student.firstName %>
-      </td>
-      <td>
-        <%= student.lastName %>
-      </td>
-      <td>
-        <%= student.degree %>
-      </td>
-      <td>
-        <%= student.program %>
-      </td>
-    </tr>
+<% for(let i = 0;i<studentsList.length;++i){%>
+  <tr>
+    <td>
+      <%= studentsList[i].firstName %>
+    </td>
+    <td>
+      <%= studentsList[i].lastName %>
+    </td>
+    <td>
+      <%= studentsList[i].degree %>
+    </td>
+    <td>
+      <%= studentsList[i].program %>
+    </td>
+  </tr>
+<%}%>
     <tr>
       <td colspan="4">
         <% include image.ejs %>
@@ -33,3 +35,4 @@
 
 </body>
 </html>
+

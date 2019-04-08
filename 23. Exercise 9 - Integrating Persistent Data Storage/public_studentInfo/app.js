@@ -9,7 +9,9 @@ app.set("view engine", "ejs");
 
 //set the path for static resources to be accessible
 app.use("/resources", express.static("resources"));
-
+var bodyParser = require("body-parser");
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 /************************************************************************/
 /************************************************************************/
 
@@ -67,6 +69,7 @@ connection.on("error", () => {
 });
 
 app.use("/studentInfo", studentInfo);
+app.post("/studentInfo", studentInfo);
 
 //start local server and listen on the default HTTP port 8080
 app.listen(8080, "127.0.0.1");
